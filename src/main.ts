@@ -62,3 +62,6 @@ getPlatformConfig(app).then(async config => {
   // .use(useEcharts);
   app.mount("#app");
 });
+
+import * as echarts from "echarts";
+app.config.globalProperties.$echarts = echarts;

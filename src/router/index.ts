@@ -37,6 +37,8 @@ import {
   multipleTabsKey
 } from "@/utils/auth";
 
+import { dataDisplay } from "./modules/error";
+
 /** 自动导入全部静态路由，无需再手动引入！匹配 src/router/modules 目录（任何嵌套级别）中具有 .ts 扩展名的所有文件，除了 remaining.ts 文件
  * 如何匹配所有文件请看：https://github.com/mrmlnc/fast-glob#basic-syntax
  * 如何排除文件请看：https://cn.vitejs.dev/guide/features.html#negative-patterns
@@ -49,11 +51,17 @@ const modules: Record<string, any> = import.meta.glob(
 );
 
 /** 原始静态路由（未做任何处理） */
-const routes = [];
+const routeModuleList: RouteRecordRaw[] = [];
 
 Object.keys(modules).forEach(key => {
-  routes.push(modules[key].default);
+  const mod = modules[key].default ?? {};
+  const modList = Array.isArray(mod) ? [...mod] : [mod];
+  routeModuleList.push(...modList);
 });
+
+routeModuleList.push(dataDisplay);
+
+const routes = routeModuleList;
 
 /** 导出处理后的静态路由（三级及以上的路由全部拍成二级） */
 export const constantRoutes: Array<RouteRecordRaw> = formatTwoStageRoutes(

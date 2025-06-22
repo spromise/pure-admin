@@ -34,3 +34,39 @@ export default {
     }
   ]
 } satisfies RouteConfigsTable;
+
+export const dataDisplay = {
+  path: "/data-display",
+  redirect: "/data-display/traffic",
+  meta: {
+    icon: "ri/information-fill",
+    title: "数据展示",
+    rank: 10
+  },
+  children: [
+    {
+      path: "/data-display/traffic",
+      name: "TrafficChart",
+      component: () => import("@/views/data-display/traffic.vue"),
+      meta: {
+        title: "流量"
+      }
+    },
+    {
+      path: "/data-display/2",
+      name: "DataDisplay2",
+      component: () => import("@/views/data-display/2.vue"),
+      meta: {
+        title: "2"
+      }
+    },
+    {
+      path: "/data-display/3",
+      name: "DataDisplay3",
+      component: () => import("@/views/data-display/3.vue"),
+      meta: {
+        title: "3"
+      }
+    }
+  ]
+} satisfies RouteConfigsTable;
