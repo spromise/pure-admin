@@ -7,6 +7,7 @@
     </template>
     <el-table :data="authData" border style="width: 100%">
       <el-table-column prop="username" label="用户名" width="120" />
+      <el-table-column prop="password" label="密码" width="120" />
       <el-table-column prop="src_ip" label="源IP" width="120" />
       <el-table-column prop="system" label="目标系统" />
       <el-table-column prop="timestamp" label="时间" width="180">

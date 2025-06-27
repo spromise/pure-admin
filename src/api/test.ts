@@ -4,5 +4,10 @@ import { baseUrlApi } from "@/api/utils";
 
 // 获取authentication
 export const getAuth = () => {
-  return http.request<any>("get", baseUrlApi("auth"));
+  return http.request("get", baseUrlApi("auth"));
+};
+
+// 获取 sessions
+export const getSessions = () => {
+  return http.request("get", baseUrlApi("sessions"));
 };
