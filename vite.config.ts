@@ -25,7 +25,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
       host: "0.0.0.0",
       proxy: {
         "/api": {
-          target: "http://192.168.179.1:3000", // 确保这是正确的后端地址
+          target: "http://localhost:3000", // 确保这是正确的后端地址
           changeOrigin: true
         }
       },
