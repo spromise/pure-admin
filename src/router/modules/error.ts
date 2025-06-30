@@ -85,6 +85,14 @@ export const dataDisplay = {
         title: "认证关系图",
         icon: "ri/node-tree"
       }
+    },
+    {
+      path: "/data-display/attacklog",
+      name: "attacklog",
+      component: () => import("@/views/data-display/attacklog.vue"),
+      meta: {
+        title: "攻击日志"
+      }
     }
   ]
 } satisfies RouteConfigsTable;

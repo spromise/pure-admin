@@ -33,3 +33,8 @@ export const getSessions = (params?: { page?: number; limit?: number }) => {
 export const getHeatmapData = (params?: { date?: string }) => {
   return http.request("get", baseUrlApi("heatmap-data"), { params });
 };
+
+// src/api/test.ts
+export const getAttackLogs = (params?: { date?: string }) => {
+  return http.request("get", baseUrlApi("attacklog"), { params });
+};
