@@ -45,19 +45,11 @@ export const dataDisplay = {
   },
   children: [
     {
-      path: "/data-display/traffic",
-      name: "TrafficChart",
-      component: () => import("@/views/data-display/traffic.vue"),
-      meta: {
-        title: "流量图表"
-      }
-    },
-    {
       path: "/data-display/3",
       name: "DataDisplay3",
       component: () => import("@/views/data-display/3.vue"),
       meta: {
-        title: "会话数据"
+        title: "SSH会话数据"
       }
     },
     {
@@ -65,7 +57,7 @@ export const dataDisplay = {
       name: "AttackHeatmap",
       component: () => import("@/views/data-display/heatmap.vue"),
       meta: {
-        title: "攻击热力图"
+        title: "SSH攻击热力图"
       }
     },
     {
@@ -73,7 +65,7 @@ export const dataDisplay = {
       name: "DataDisplay2",
       component: () => import("@/views/data-display/2.vue"),
       meta: {
-        title: "认证数据"
+        title: "SSH认证数据"
       }
     },
 
@@ -82,7 +74,7 @@ export const dataDisplay = {
       name: "AuthRelationGraph",
       component: () => import("@/views/data-display/graph.vue"),
       meta: {
-        title: "认证关系图",
+        title: "SSH认证关系图",
         icon: "ri/node-tree"
       }
     },
@@ -91,7 +83,7 @@ export const dataDisplay = {
       name: "attacklog",
       component: () => import("@/views/data-display/attacklog.vue"),
       meta: {
-        title: "攻击日志"
+        title: "Web攻击日志"
       }
     },
     {
@@ -99,7 +91,7 @@ export const dataDisplay = {
       name: "attacklogheatmap",
       component: () => import("@/views/data-display/attackheatmap.vue"),
       meta: {
-        title: "攻击日志热力图"
+        title: "Web攻击热力图"
       }
     }
   ]
