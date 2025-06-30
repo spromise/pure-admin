@@ -93,6 +93,14 @@ export const dataDisplay = {
       meta: {
         title: "攻击日志"
       }
+    },
+    {
+      path: "/data-display/attheatmap",
+      name: "attacklogheatmap",
+      component: () => import("@/views/data-display/attackheatmap.vue"),
+      meta: {
+        title: "攻击日志热力图"
+      }
     }
   ]
 } satisfies RouteConfigsTable;
