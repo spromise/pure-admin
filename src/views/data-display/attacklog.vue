@@ -134,7 +134,13 @@ function formatTime(val: string | Date) {
 onMounted(async () => {
   try {
     const res = await getAttackLogs();
-    attackLogs.value = res.data || [];
+    // 按到达时间（timestamp_parsed）从晚到早排序
+    attackLogs.value = (res.data || []).sort((a, b) => {
+      return (
+        new Date(b.timestamp_parsed).getTime() -
+        new Date(a.timestamp_parsed).getTime()
+      );
+    });
     totalCount.value = attackLogs.value.length;
     console.log("攻击日志数据：", res.data);
   } catch (error) {
