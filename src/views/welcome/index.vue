@@ -304,7 +304,6 @@ onMounted(async () => {
           <div class="flex justify-between items-start mt-3">
             <div class="w-1/2">
               <span class="stat-num">{{ totalAttacks }}</span>
-              <p class="font-medium text-green-500">+{{ totalAttacks }}</p>
             </div>
           </div>
         </el-card>
